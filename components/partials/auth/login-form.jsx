@@ -80,23 +80,29 @@ const LoginForm = () => {
         name="email"
         label="Email"
         type="email"
+        id="email"
         placeholder="Enter your email"
         register={register}
         error={errors?.email}
+        className="h-[48px]"
       />
       <Textinput
         name="password"
         label="Password"
         type="password"
+        id="password"
         placeholder="Enter your password"
         register={register}
         error={errors.password}
+        className="h-[48px]"
+        hasicon
       />
       <div className="flex justify-between">
         <Checkbox
           value={rememberMe}
           onChange={() => setRememberMe(!rememberMe)}
           label="Keep me signed in"
+          id="rememberMe"
         />
         <Link
           href="/forgot-password"
@@ -108,7 +114,7 @@ const LoginForm = () => {
 
       <button 
         type="submit" 
-        className="btn btn-dark block w-full text-center"
+        className="btn btn-dark block w-full text-center h-[48px]"
         disabled={isLoading}
       >
         {isLoading ? (
@@ -127,7 +133,7 @@ const LoginForm = () => {
       </button>
 
       {error && (
-        <div className="text-sm text-red-500 mt-2">
+        <div className="text-sm text-red-500 mt-2" role="alert">
           {error}
         </div>
       )}
